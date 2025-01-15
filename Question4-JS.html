@@ -2,21 +2,26 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <title>Question 4 - JavaScript</title>
-
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <h1>HTML DOM Events</h1>
     <p>Trigger a function on hover that will output "Hello World":</p>
+    <p>Trigger a function on focus（Keyborad Tab） that will output "Hello World":</p>
 
-    <button onmouseover="myFunction()">Action!</button>
+    <button id="actionButton" class="button">Action!</button>
     <p id="demo"></p>
-</body>
-<script>
-    function myFunction() {
-        document.getElementById("demo").innerHTML = "Hello World";
-    }
-</script>
 
+    <script>
+        document.getElementById("actionButton").addEventListener("mouseover", myFunction);
+        document.getElementById("actionButton").addEventListener("focus", myFunction);
+    
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "Hello World";
+        }
+    </script>    
+</body>
 </html>
